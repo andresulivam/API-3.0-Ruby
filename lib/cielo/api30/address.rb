@@ -16,7 +16,8 @@ module Cielo
                     :zip_code,
                     :city,
                     :state,
-                    :country
+                    :country,
+                    :district
 
       def to_json(*options)
         hash = as_json(*options)
@@ -35,6 +36,7 @@ module Cielo
         address.city = data["City"]
         address.state = data["State"]
         address.country = data["Country"]
+        address.district = data["District"]
         address
       end
 
@@ -46,7 +48,8 @@ module Cielo
           ZipCode: @zip_code,
           City: @city,
           State: @state,
-          Country: @country
+          Country: @country,
+          District: @district
         }
       end
     end
